@@ -51,3 +51,26 @@ node scripts/score_routes.mjs
 
 - 开罗 + 卢克索 + 赫尔格达：历史体验完整，红海也顺路，但转场更多。
 - 开罗 + 沙姆沙伊赫：价格/时间更优，红海度假更强，但少了卢克索。
+
+## 实时比价工作流
+
+半自动实时比价围绕方案 3：
+
+- S3-HRG：开罗 + 卢克索 + 赫尔格达
+- S3-SSH：开罗 + 沙姆沙伊赫
+
+数据文件：
+
+- `data/live_price_options.json`
+
+验证和评分：
+
+```bash
+node scripts/validate_live_options.mjs data/live_price_options.json
+node scripts/score_live_options.mjs
+node scripts/generate_live_report.mjs
+```
+
+生成报告：
+
+- `reports/2026-09-egypt-live-price-comparison.md`
