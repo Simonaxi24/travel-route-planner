@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "created_at": "2026-07-29",
+    "currency": "USD",
+    "weights": {
+      "price": 0.5,
+      "time": 0.5
+    },
+    "traveler_context": {
+      "traveler_a": "1 adult, full Beijing-origin itinerary",
+      "traveler_b": "1 adult, Lanzhou-Egypt round trip segment only",
+      "baggage": "checked baggage required"
+    },
+    "important_caveat": "Future flight fares and operating days can change. Re-run the scoring after live fare checks before booking."
+  },
+  "source_notes": [
+    {
+      "topic": "Beijing-Changchun direct",
+      "url": "https://www.flightsfrom.com/PEK-CGQ",
+      "note": "Direct PEK-CGQ flight time around 2h05m."
+    },
+    {
+      "topic": "Changchun-Lanzhou direct",
+      "url": "https://www.flightsfrom.com/CGQ-LHW",
+      "note": "Direct CGQ-LHW flight time around 3h45m."
+    },
+    {
+      "topic": "Lanzhou-Changchun direct",
+      "url": "https://www.flightsfrom.com/LHW-CGQ",
+      "note": "Use for the new Sep24 Lanzhou-first option; direct LHW-CGQ flight time is roughly symmetric with CGQ-LHW."
+    },
+    {
+      "topic": "Changchun-Beijing direct",
+      "url": "https://www.flightsfrom.com/CGQ-PEK",
+      "note": "Use for returning to Beijing before the Sep29 Egypt round trip."
+    },
+    {
+      "topic": "Lanzhou-Cairo routing",
+      "url": "https://www.flightconnections.com/flights-from-lhw-to-cai",
+      "note": "No nonstop LHW-CAI; one-stop routes exist."
+    },
+    {
+      "topic": "Beijing-Cairo direct",
+      "url": "https://www.flightsfrom.com/PEK-CAI",
+      "note": "Direct PEK-CAI operated by EgyptAir/Air China; flight time around 12h."
+    },
+    {
+      "topic": "Cairo-Beijing direct",
+      "url": "https://www.flightsfrom.com/CAI-PEK",
+      "note": "Direct CAI-PEK operated by EgyptAir/Air China; flight time around 10h20m."
+    },
+    {
+      "topic": "Cairo-Hurghada direct",
+      "url": "https://www.flightconnections.com/flights-from-cai-to-hrg",
+      "note": "Multiple nonstop operators; flight time around 1-2h."
+    },
+    {
+      "topic": "Cairo-Sharm direct",
+      "url": "https://www.flightconnections.com/flights-from-cai-to-ssh",
+      "note": "Multiple nonstop operators; flight time around 1h."
+    },
+    {
+      "topic": "Cairo-Luxor direct",
+      "url": "https://www.flightconnections.com/flights-from-cai-to-lxr",
+      "note": "Multiple nonstop operators; flight time around 1h."
+    },
+    {
+      "topic": "Luxor-Hurghada transfer",
+      "url": "https://daytrip.com/en/transfers/luxor-eg/hurghada-eg",
+      "note": "Road transfer around 4h / 310km."
+    },
+    {
+      "topic": "EgyptAir baggage",
+      "url": "https://www.egyptair.com/en/fly/baggage/Pages/baggage-allowance.aspx",
+      "note": "Economy checked baggage depends on fare rules, typically 23kg pieces."
+    },
+    {
+      "topic": "Air China baggage",
+      "url": "https://www.airchina.us/US/GB/info/checked-baggage",
+      "note": "Domestic flights forming part of international carriage follow international/regional baggage size rules."
+    },
+    {
+      "topic": "Ctrip Cairo flights",
+      "url": "https://flights.ctrip.com/international/cai-332-incity.html",
+      "note": "China-origin Cairo flight search entry; useful for Beijing/Shanghai/Guangzhou/other China to Cairo fare checks."
+    },
+    {
+      "topic": "Qunar Cairo flights",
+      "url": "https://flight.qunar.com/touch/international-city-CAI.html",
+      "note": "China OTA Cairo city page with international fare search and open-jaw/multi-city hints."
+    },
+    {
+      "topic": "Fliggy flights and hotels",
+      "url": "https://www.fliggy.com/",
+      "note": "China OTA entry covering domestic/international flights, hotels, train tickets, packages, tickets and visa products."
+    },
+    {
+      "topic": "Meituan flight entry",
+      "url": "https://i.meituan.com/awp/hfe/hfe-dianping-flight/index/index.html",
+      "note": "China domestic/international flight entry; best used as domestic segment and hotel cross-check."
+    },
+    {
+      "topic": "Xiaohongshu travel planning",
+      "url": "https://www.xiaohongshu.com/",
+      "note": "Use for Egypt itinerary notes, local guide reviews, anti-scam tips and Hurghada/Sharm experience validation, not as fare source."
+    },
+    {
+      "topic": "Ctrip Hurghada hotels",
+      "url": "https://hotels.ctrip.com/hotel/hurghada3471",
+      "note": "Hurghada hotel search entry; useful for Red Sea accommodation and package checks."
+    },
+    {
+      "topic": "Egypt branch comparison",
+      "url": "https://www.experienceegypt.eg/",
+      "note": "Official tourism reference for Cairo/Giza, Luxor, Hurghada and Sharm El Sheikh experience differences."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "S1_HRG",
+      "name": "方案1：北京-长春-兰州-开罗-卢克索-赫尔格达-北京",
+      "recommendation_rank": 1,
+      "price_usd": 1360,
+      "travel_hours": 49,
+      "red_sea_base": "Hurghada",
+      "fit": {
+        "arrive_changchun_before_noon_sep27": true,
+        "arrive_zhengzhou_before_oct5": false,
+        "return_beijing_before_oct7": true,
+        "egypt_days": 8
+      },
+      "why": "Best balance: slightly higher estimated price than the cheapest option, but saves several hours and gives a fuller Egypt itinerary with Cairo/Giza, Luxor and Red Sea.",
+      "traveler_a_segments": [
+        "BJS-CGQ direct",
+        "CGQ-LHW direct or one-stop",
+        "LHW-CAI via a China hub, preferably through-ticket with checked baggage",
+        "CAI-LXR flight or train",
+        "LXR-HRG road transfer",
+        "HRG-CAI flight",
+        "CAI-BJS direct or one-stop"
+      ],
+      "traveler_b_segments": [
+        "LHW-CAI via a China hub",
+        "CAI-LHW via the same or nearby China hub"
+      ],
+      "risk_notes": [
+        "Sep27 has a tight Changchun-to-Lanzhou-to-international-hub chain; avoid self-transfer with checked bags unless layover exceeds 5-6 hours.",
+        "Use a through-ticket for Lanzhou-Egypt if possible so baggage and misconnection handling stay protected."
+      ]
+    },
+    {
+      "id": "S1_SSH",
+      "name": "方案1：北京-长春-兰州-开罗-沙姆沙伊赫-北京",
+      "recommendation_rank": 3,
+      "price_usd": 1390,
+      "travel_hours": 52,
+      "red_sea_base": "Sharm El Sheikh",
+      "fit": {
+        "arrive_changchun_before_noon_sep27": true,
+        "arrive_zhengzhou_before_oct5": false,
+        "return_beijing_before_oct7": true,
+        "egypt_days": 8
+      },
+      "why": "Strongest pure beach/diving choice, but adding Luxor history normally adds extra flight backtracking through Cairo.",
+      "traveler_a_segments": [
+        "BJS-CGQ",
+        "CGQ-LHW",
+        "LHW-CAI",
+        "CAI-SSH",
+        "SSH-CAI",
+        "CAI-BJS"
+      ],
+      "traveler_b_segments": [
+        "LHW-CAI",
+        "CAI-LHW"
+      ],
+      "risk_notes": [
+        "If Luxor is mandatory, this variant becomes noticeably slower than Hurghada.",
+        "Sharm is better when the sea experience has more weight than total transfer time."
+      ]
+    },
+    {
+      "id": "S2_HRG",
+      "name": "方案2：北京-兰州-开罗-卢克索-赫尔格达-郑州-北京",
+      "recommendation_rank": 2,
+      "price_usd": 1307,
+      "travel_hours": 56,
+      "red_sea_base": "Hurghada",
+      "fit": {
+        "arrive_changchun_before_noon_sep27": false,
+        "arrive_zhengzhou_before_oct5": true,
+        "return_beijing_before_oct7": true,
+        "egypt_days": 7
+      },
+      "why": "Lowest estimated cash cost, but the Zhengzhou-before-Oct5 constraint forces an earlier Egypt exit and adds a less efficient return leg.",
+      "traveler_a_segments": [
+        "BJS-LHW",
+        "LHW-CAI via China hub",
+        "CAI-LXR",
+        "LXR-HRG",
+        "HRG-CAI",
+        "CAI-CGO one-stop",
+        "CGO-BJS by flight or high-speed rail"
+      ],
+      "traveler_b_segments": [
+        "LHW-CAI via China hub",
+        "CAI-LHW via China hub"
+      ],
+      "risk_notes": [
+        "Arriving Zhengzhou before Oct5 means leaving Egypt no later than Oct3 or very early Oct4 in most practical routings.",
+        "If CGO-BJS is domestic flight, airport time can erase much of the speed advantage versus high-speed rail."
+      ]
+    },
+    {
+      "id": "S2_SSH",
+      "name": "方案2：北京-兰州-开罗-沙姆沙伊赫-郑州-北京",
+      "recommendation_rank": 6,
+      "price_usd": 1350,
+      "travel_hours": 58,
+      "red_sea_base": "Sharm El Sheikh",
+      "fit": {
+        "arrive_changchun_before_noon_sep27": false,
+        "arrive_zhengzhou_before_oct5": true,
+        "return_beijing_before_oct7": true,
+        "egypt_days": 7
+      },
+      "why": "Good Red Sea resort experience, but weaker for combined history-plus-beach optimization under the Oct5 Zhengzhou deadline.",
+      "traveler_a_segments": [
+        "BJS-LHW",
+        "LHW-CAI",
+        "CAI-SSH",
+        "SSH-CAI",
+        "CAI-CGO",
+        "CGO-BJS"
+      ],
+      "traveler_b_segments": [
+        "LHW-CAI",
+        "CAI-LHW"
+      ],
+      "risk_notes": [
+        "Keeping both Luxor and Sharm in a 7-day Egypt window is possible but transfer-heavy.",
+        "Better only if beach quality is weighted above price/time."
+      ]
+    },
+    {
+      "id": "S3_HRG",
+      "name": "方案3：9/24晚北京-兰州，9/27早兰州-长春，9/29北京往返埃及：开罗-卢克索-赫尔格达",
+      "recommendation_rank": 2,
+      "price_usd": 1320,
+      "travel_hours": 46,
+      "red_sea_base": "Hurghada",
+      "egypt_branch": "Cairo + Luxor + Hurghada",
+      "fit": {
+        "arrive_lanzhou_sep24_night": true,
+        "depart_lanzhou_to_changchun_sep27_morning": true,
+        "depart_beijing_to_egypt_sep29": true,
+        "arrive_changchun_before_noon_sep27": true,
+        "arrive_zhengzhou_before_oct5": false,
+        "return_beijing_before_oct7": true,
+        "egypt_days": 8
+      },
+      "why": "Best full-experience branch under the new plan: Beijing-Cairo round trip simplifies the international ticket, while Luxor-Hurghada gives the strongest history-plus-Red-Sea route.",
+      "traveler_a_segments": [
+        "BJS-LHW night flight on Sep24",
+        "LHW-CGQ early flight on Sep27",
+        "CGQ-BJS on Sep27 or Sep28",
+        "BJS-CAI round trip from Sep29",
+        "CAI-LXR flight or train",
+        "LXR-HRG road transfer",
+        "HRG-CAI flight",
+        "CAI-BJS direct or one-stop"
+      ],
+      "traveler_b_segments": [
+        "LHW-BJS-CAI around Sep29 if joining the Beijing-Cairo international flights",
+        "CAI-BJS-LHW on the return, preferably through-ticket with checked baggage"
+      ],
+      "risk_notes": [
+        "Adds a domestic triangle before the international trip, so Sep27-Sep29 buffer in Beijing is important.",
+        "The Beijing-Cairo round trip is usually easier to price and protect than Lanzhou-Cairo open-jaw routes.",
+        "This branch has more Egypt internal movement than Cairo-Sharm, but the history experience is much stronger."
+      ]
+    },
+    {
+      "id": "S3_SSH",
+      "name": "方案3：9/24晚北京-兰州，9/27早兰州-长春，9/29北京往返埃及：开罗-沙姆沙伊赫",
+      "recommendation_rank": 1,
+      "price_usd": 1280,
+      "travel_hours": 42,
+      "red_sea_base": "Sharm El Sheikh",
+      "egypt_branch": "Cairo + Sharm El Sheikh",
+      "fit": {
+        "arrive_lanzhou_sep24_night": true,
+        "depart_lanzhou_to_changchun_sep27_morning": true,
+        "depart_beijing_to_egypt_sep29": true,
+        "arrive_changchun_before_noon_sep27": true,
+        "arrive_zhengzhou_before_oct5": false,
+        "return_beijing_before_oct7": true,
+        "egypt_days": 8
+      },
+      "why": "Best pure price-time branch in the new plan: fewer Egypt internal transfers and a straightforward Beijing-Cairo round trip, but it gives up Luxor.",
+      "traveler_a_segments": [
+        "BJS-LHW night flight on Sep24",
+        "LHW-CGQ early flight on Sep27",
+        "CGQ-BJS on Sep27 or Sep28",
+        "BJS-CAI round trip from Sep29",
+        "CAI-SSH round trip",
+        "CAI-BJS direct or one-stop"
+      ],
+      "traveler_b_segments": [
+        "LHW-BJS-CAI around Sep29 if joining the Beijing-Cairo international flights",
+        "CAI-BJS-LHW on the return, preferably through-ticket with checked baggage"
+      ],
+      "risk_notes": [
+        "This scores well on price/time because it removes Luxor and the Luxor-Hurghada land transfer.",
+        "Historical depth is lower: Cairo and Giza carry the history component, while Luxor is skipped.",
+        "Better if the trip is meant to feel more like Cairo highlights plus Red Sea vacation."
+      ]
+    }
+  ]
+}
