@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>埃及段行程规划</title>
+    <link rel="stylesheet" href="./styles.css?v=20260731-prefill-candidates">
+  </head>
+  <body>
+    <main class="page-shell egypt-planner">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">埃及段实时查询工作台</p>
+          <h1>埃及段行程规划</h1>
+          <p class="muted">9/30 09:00 到达开罗 · 10/7 14:45 开罗起飞</p>
+        </div>
+        <button id="export-json" type="button">导出 JSON</button>
+      </header>
+
+      <section id="recommendation" class="recommendation-panel" aria-label="推荐结论"></section>
+      <section id="query-workbench" class="query-workbench panel" aria-label="查询工作台"></section>
+      <section id="option-tabs" class="option-tabs" aria-label="方案切换"></section>
+
+      <section class="planner-grid">
+        <section class="panel">
+          <h2>每日行程</h2>
+          <div id="daily-itinerary" class="daily-itinerary"></div>
+        </section>
+        <aside class="side-stack">
+          <section class="panel">
+            <h2>我的查询队列</h2>
+            <div id="query-task-list" class="query-task-list"></div>
+          </section>
+          <section class="panel">
+            <h2>风险与取舍</h2>
+            <div id="risk-panel" class="risk-panel"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+    <script src="./egypt-itinerary-data.js"></script>
+    <script type="module" src="./app.js?v=20260731-prefill-candidates"></script>
+  </body>
+</html>

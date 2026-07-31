@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "currency": "CNY",
+    "searched_at": "2026-07-29T20:00:00+08:00",
+    "note": "Only concrete search results are eligible for conclusions. Missing segments are shown as 待查询 and excluded from recommendation scoring."
+  },
+  "scenarios": [
+    {
+      "id": "S3_SSH_DEP0929",
+      "label_zh": "9/29 出发 · 开罗 + 沙姆沙伊赫",
+      "departure_date": "2026-09-29",
+      "branch_id": "S3_SSH",
+      "required_segment_keys": ["bjs-lhw", "lhw-cgq", "cgq-bjs", "bjs-cai-outbound", "cai-bjs-return", "cai-ssh", "ssh-cai"],
+      "selected_candidate_ids": [],
+      "selected_hotel_ids": [],
+      "selected_activity_ids": [],
+      "selected_ground_transport_ids": []
+    },
+    {
+      "id": "S3_HRG_DEP0929",
+      "label_zh": "9/29 出发 · 开罗 + 卢克索 + 赫尔格达",
+      "departure_date": "2026-09-29",
+      "branch_id": "S3_HRG",
+      "required_segment_keys": ["bjs-lhw", "lhw-cgq", "cgq-bjs", "bjs-cai-outbound", "cai-bjs-return", "cai-lxr", "lxr-hrg", "hrg-cai"],
+      "selected_candidate_ids": [],
+      "selected_hotel_ids": [],
+      "selected_activity_ids": [],
+      "selected_ground_transport_ids": []
+    },
+    {
+      "id": "S3_SSH_DEP0930",
+      "label_zh": "9/30 出发 · 开罗 + 沙姆沙伊赫",
+      "departure_date": "2026-09-30",
+      "branch_id": "S3_SSH",
+      "required_segment_keys": ["bjs-lhw", "lhw-cgq", "cgq-bjs", "bjs-cai-outbound", "cai-bjs-return", "cai-ssh", "ssh-cai"],
+      "selected_candidate_ids": [],
+      "selected_hotel_ids": [],
+      "selected_activity_ids": [],
+      "selected_ground_transport_ids": []
+    },
+    {
+      "id": "S3_HRG_DEP0930",
+      "label_zh": "9/30 出发 · 开罗 + 卢克索 + 赫尔格达",
+      "departure_date": "2026-09-30",
+      "branch_id": "S3_HRG",
+      "required_segment_keys": ["bjs-lhw", "lhw-cgq", "cgq-bjs", "bjs-cai-outbound", "cai-bjs-return", "cai-lxr", "lxr-hrg", "hrg-cai"],
+      "selected_candidate_ids": [],
+      "selected_hotel_ids": [],
+      "selected_activity_ids": [],
+      "selected_ground_transport_ids": []
+    }
+  ],
+  "flight_candidates": [],
+  "missing_segments": [
+    {
+      "scenario_ids": ["S3_SSH_DEP0929", "S3_HRG_DEP0929", "S3_SSH_DEP0930", "S3_HRG_DEP0930"],
+      "segment_key": "bjs-lhw",
+      "date": "2026-09-24",
+      "from_city_zh": "北京",
+      "to_city_zh": "兰州",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入 9/24 晚北京到兰州的具体航班候选"
+    },
+    {
+      "scenario_ids": ["S3_SSH_DEP0929", "S3_HRG_DEP0929", "S3_SSH_DEP0930", "S3_HRG_DEP0930"],
+      "segment_key": "lhw-cgq",
+      "date": "2026-09-27",
+      "from_city_zh": "兰州",
+      "to_city_zh": "长春",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入 9/27 早兰州到长春的具体航班候选"
+    },
+    {
+      "scenario_ids": ["S3_SSH_DEP0929", "S3_HRG_DEP0929", "S3_SSH_DEP0930", "S3_HRG_DEP0930"],
+      "segment_key": "cgq-bjs",
+      "date": "2026-09-28",
+      "from_city_zh": "长春",
+      "to_city_zh": "北京",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入 9/28 长春回北京的具体航班候选"
+    },
+    {
+      "scenario_ids": ["S3_SSH_DEP0929", "S3_HRG_DEP0929"],
+      "segment_key": "bjs-cai-outbound",
+      "date": "2026-09-29",
+      "from_city_zh": "北京",
+      "to_city_zh": "开罗",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入 9/29 北京到开罗的具体航班候选"
+    },
+    {
+      "scenario_ids": ["S3_SSH_DEP0930", "S3_HRG_DEP0930"],
+      "segment_key": "bjs-cai-outbound",
+      "date": "2026-09-30",
+      "from_city_zh": "北京",
+      "to_city_zh": "开罗",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入 9/30 北京到开罗的具体航班候选"
+    },
+    {
+      "scenario_ids": ["S3_SSH_DEP0929", "S3_HRG_DEP0929", "S3_SSH_DEP0930", "S3_HRG_DEP0930"],
+      "segment_key": "cai-bjs-return",
+      "date": "2026-10-06",
+      "from_city_zh": "开罗",
+      "to_city_zh": "北京",
+      "status_zh": "待查询",
+      "reason_zh": "用户已查到 10/6 无直飞；仍需录入具体中转候选"
+    },
+    {
+      "scenario_ids": ["S3_SSH_DEP0929", "S3_SSH_DEP0930"],
+      "segment_key": "cai-ssh",
+      "date": "2026-10-02",
+      "from_city_zh": "开罗",
+      "to_city_zh": "沙姆沙伊赫",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入具体航班候选"
+    },
+    {
+      "scenario_ids": ["S3_SSH_DEP0929", "S3_SSH_DEP0930"],
+      "segment_key": "ssh-cai",
+      "date": "2026-10-05",
+      "from_city_zh": "沙姆沙伊赫",
+      "to_city_zh": "开罗",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入具体航班候选"
+    },
+    {
+      "scenario_ids": ["S3_HRG_DEP0929", "S3_HRG_DEP0930"],
+      "segment_key": "cai-lxr",
+      "date": "2026-10-01",
+      "from_city_zh": "开罗",
+      "to_city_zh": "卢克索",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入具体航班候选"
+    },
+    {
+      "scenario_ids": ["S3_HRG_DEP0929", "S3_HRG_DEP0930"],
+      "segment_key": "lxr-hrg",
+      "date": "2026-10-03",
+      "from_city_zh": "卢克索",
+      "to_city_zh": "赫尔格达",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入卢克索到赫尔格达的具体包车或交通候选"
+    },
+    {
+      "scenario_ids": ["S3_HRG_DEP0929", "S3_HRG_DEP0930"],
+      "segment_key": "hrg-cai",
+      "date": "2026-10-05",
+      "from_city_zh": "赫尔格达",
+      "to_city_zh": "开罗",
+      "status_zh": "待查询",
+      "reason_zh": "尚未录入具体航班候选"
+    }
+  ],
+  "hotels": [],
+  "activities": [],
+  "ground_transport": []
+}

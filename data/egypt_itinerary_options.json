@@ -1,0 +1,475 @@
+{
+  "metadata": {
+    "currency": "CNY",
+    "fixed_arrival": { "city_zh": "开罗", "date": "2026-09-30", "time": "09:00" },
+    "fixed_departure": { "city_zh": "开罗", "date": "2026-10-07", "time": "14:45" },
+    "assistant_query_policy_zh": "待查询表示待助手查询，用户只处理登录、验证码和最终购买确认。"
+  },
+  "options": [
+    {
+      "id": "A1_HRG_BALANCED",
+      "name_zh": "A1 开罗 + 卢克索 + 赫尔格达",
+      "positioning_zh": "均衡推荐版",
+      "route_order_zh": ["开罗", "卢克索", "赫尔格达", "开罗"],
+      "includes_abu_simbel": false,
+      "default_recommendation": true,
+      "risk_level": "medium",
+      "hotel_nights": { "开罗": 3, "卢克索": 2, "赫尔格达": 1 },
+      "recommendation_zh": "默认推荐 A1，因为它保留完整红海日，并在 10/6 回开罗，10/7 国际返程风险低。"
+    },
+    {
+      "id": "A2_ABU_SIMBEL_HRG",
+      "name_zh": "A2 开罗 + 阿布辛贝 + 卢克索 + 赫尔格达",
+      "positioning_zh": "历史强化版",
+      "route_order_zh": ["开罗", "阿斯旺/阿布辛贝", "卢克索", "赫尔格达", "开罗"],
+      "includes_abu_simbel": true,
+      "default_recommendation": false,
+      "risk_level": "high",
+      "hotel_nights": { "开罗": 2, "阿斯旺": 1, "卢克索": 2, "赫尔格达": 1 },
+      "recommendation_zh": "A2 多阿布辛贝，但牺牲红海和缓冲，必须优先确认 10/7 赫尔格达早班飞开罗。",
+      "fallback_zh": "若无可行 10/7 赫尔格达早班到开罗结果，建议 10/6 回开罗。"
+    }
+  ],
+  "days": [
+    {
+      "option_id": "A1_HRG_BALANCED",
+      "date": "2026-09-30",
+      "city_zh": "开罗",
+      "blocks": [
+        { "period": "morning", "title_zh": "09:00 到达开罗，入境和取行李", "type": "arrival", "risk_level": "low", "must_book": false },
+        { "period": "afternoon", "title_zh": "GEM 或开罗市区轻量活动", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "开罗入住休整", "type": "hotel", "risk_level": "low", "must_book": true, "query_task_ids": ["a1-cairo-hotel"] }
+      ]
+    },
+    {
+      "option_id": "A1_HRG_BALANCED",
+      "date": "2026-10-01",
+      "city_zh": "开罗",
+      "blocks": [
+        { "period": "morning", "title_zh": "金字塔 + 狮身人面像", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "afternoon", "title_zh": "开罗市区或埃及文明博物馆", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "开罗第二晚", "type": "hotel", "risk_level": "low", "must_book": true, "query_task_ids": ["a1-cairo-hotel"] }
+      ]
+    },
+    {
+      "option_id": "A1_HRG_BALANCED",
+      "date": "2026-10-02",
+      "city_zh": "卢克索",
+      "blocks": [
+        { "period": "morning", "title_zh": "开罗 → 卢克索交通", "type": "transfer", "risk_level": "medium", "must_book": true, "query_task_ids": ["a1-cai-lxr-1002"] },
+        { "period": "afternoon", "title_zh": "卡尔纳克神庙", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "卢克索神庙 + 卢克索入住", "type": "sight", "risk_level": "low", "must_book": true, "query_task_ids": ["a1-luxor-hotel"] }
+      ]
+    },
+    {
+      "option_id": "A1_HRG_BALANCED",
+      "date": "2026-10-03",
+      "city_zh": "卢克索",
+      "blocks": [
+        { "period": "morning", "title_zh": "帝王谷", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "afternoon", "title_zh": "哈特谢普苏特神庙 + 门农巨像", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "卢克索第二晚", "type": "hotel", "risk_level": "low", "must_book": true, "query_task_ids": ["a1-luxor-hotel"] }
+      ]
+    },
+    {
+      "option_id": "A1_HRG_BALANCED",
+      "date": "2026-10-04",
+      "city_zh": "赫尔格达",
+      "blocks": [
+        { "period": "morning", "title_zh": "卢克索 → 赫尔格达包车", "type": "transfer", "risk_level": "medium", "must_book": true, "query_task_ids": ["a1-lxr-hrg-1004"] },
+        { "period": "afternoon", "title_zh": "赫尔格达入住红海酒店", "type": "hotel", "risk_level": "low", "must_book": true, "query_task_ids": ["a1-hurghada-hotel"] },
+        { "period": "evening", "title_zh": "海边休整", "type": "rest", "risk_level": "low", "must_book": false }
+      ]
+    },
+    {
+      "option_id": "A1_HRG_BALANCED",
+      "date": "2026-10-05",
+      "city_zh": "赫尔格达",
+      "blocks": [
+        { "period": "morning", "title_zh": "红海一日游或浮潜", "type": "activity", "risk_level": "medium", "must_book": true, "query_task_ids": ["a1-red-sea-day-trip"] },
+        { "period": "afternoon", "title_zh": "红海一日游继续或酒店海滩", "type": "activity", "risk_level": "medium", "must_book": true, "query_task_ids": ["a1-red-sea-day-trip"] },
+        { "period": "evening", "title_zh": "赫尔格达第二晚", "type": "hotel", "risk_level": "low", "must_book": true, "query_task_ids": ["a1-hurghada-hotel"] }
+      ]
+    },
+    {
+      "option_id": "A1_HRG_BALANCED",
+      "date": "2026-10-06",
+      "city_zh": "开罗",
+      "blocks": [
+        { "period": "morning", "title_zh": "赫尔格达 → 开罗交通", "type": "transfer", "risk_level": "medium", "must_book": true, "query_task_ids": ["a1-hrg-cai-1006"] },
+        { "period": "afternoon", "title_zh": "开罗返程缓冲", "type": "rest", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "开罗最后一晚", "type": "hotel", "risk_level": "low", "must_book": true, "query_task_ids": ["a1-cairo-hotel"] }
+      ]
+    },
+    {
+      "option_id": "A1_HRG_BALANCED",
+      "date": "2026-10-07",
+      "city_zh": "开罗",
+      "blocks": [
+        { "period": "morning", "title_zh": "开罗轻量活动或直接去机场", "type": "rest", "risk_level": "low", "must_book": false },
+        { "period": "afternoon", "title_zh": "14:45 开罗起飞返程", "type": "departure", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "国际航班返程中", "type": "departure", "risk_level": "low", "must_book": false }
+      ]
+    },
+    {
+      "option_id": "A2_ABU_SIMBEL_HRG",
+      "date": "2026-09-30",
+      "city_zh": "开罗",
+      "blocks": [
+        { "period": "morning", "title_zh": "09:00 到达开罗，入境和取行李", "type": "arrival", "risk_level": "low", "must_book": false },
+        { "period": "afternoon", "title_zh": "GEM 或开罗市区轻量活动", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "开罗入住休整", "type": "hotel", "risk_level": "low", "must_book": true }
+      ]
+    },
+    {
+      "option_id": "A2_ABU_SIMBEL_HRG",
+      "date": "2026-10-01",
+      "city_zh": "开罗/阿斯旺",
+      "blocks": [
+        { "period": "morning", "title_zh": "金字塔 + 狮身人面像", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "afternoon", "title_zh": "开罗补充游览", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "开罗 → 阿斯旺交通", "type": "transfer", "risk_level": "high", "must_book": true, "query_task_ids": ["a2-cai-asw-1001"] }
+      ]
+    },
+    {
+      "option_id": "A2_ABU_SIMBEL_HRG",
+      "date": "2026-10-02",
+      "city_zh": "阿斯旺",
+      "blocks": [
+        { "period": "morning", "title_zh": "阿布辛贝早出发", "type": "sight", "risk_level": "high", "must_book": true, "query_task_ids": ["a2-abu-simbel-1002"] },
+        { "period": "afternoon", "title_zh": "阿布辛贝返回阿斯旺", "type": "transfer", "risk_level": "high", "must_book": true, "query_task_ids": ["a2-abu-simbel-1002"] },
+        { "period": "evening", "title_zh": "阿斯旺休整", "type": "hotel", "risk_level": "medium", "must_book": true }
+      ]
+    },
+    {
+      "option_id": "A2_ABU_SIMBEL_HRG",
+      "date": "2026-10-03",
+      "city_zh": "卢克索",
+      "blocks": [
+        { "period": "morning", "title_zh": "阿斯旺 → 卢克索交通", "type": "transfer", "risk_level": "medium", "must_book": true, "query_task_ids": ["a2-asw-lxr-1003"] },
+        { "period": "afternoon", "title_zh": "卡尔纳克神庙", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "卢克索神庙 + 卢克索入住", "type": "sight", "risk_level": "low", "must_book": true }
+      ]
+    },
+    {
+      "option_id": "A2_ABU_SIMBEL_HRG",
+      "date": "2026-10-04",
+      "city_zh": "卢克索",
+      "blocks": [
+        { "period": "morning", "title_zh": "帝王谷", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "afternoon", "title_zh": "哈特谢普苏特神庙 + 门农巨像", "type": "sight", "risk_level": "low", "must_book": false },
+        { "period": "evening", "title_zh": "卢克索第二晚", "type": "hotel", "risk_level": "low", "must_book": true }
+      ]
+    },
+    {
+      "option_id": "A2_ABU_SIMBEL_HRG",
+      "date": "2026-10-05",
+      "city_zh": "赫尔格达",
+      "blocks": [
+        { "period": "morning", "title_zh": "卢克索 → 赫尔格达包车", "type": "transfer", "risk_level": "medium", "must_book": true, "query_task_ids": ["a2-lxr-hrg-1005"] },
+        { "period": "afternoon", "title_zh": "赫尔格达入住红海酒店", "type": "hotel", "risk_level": "low", "must_book": true, "query_task_ids": ["a2-hurghada-hotel"] },
+        { "period": "evening", "title_zh": "海边休整", "type": "rest", "risk_level": "low", "must_book": false }
+      ]
+    },
+    {
+      "option_id": "A2_ABU_SIMBEL_HRG",
+      "date": "2026-10-06",
+      "city_zh": "赫尔格达",
+      "blocks": [
+        { "period": "morning", "title_zh": "红海半日或一日游", "type": "activity", "risk_level": "medium", "must_book": true, "query_task_ids": ["a2-red-sea-half-day"] },
+        { "period": "afternoon", "title_zh": "红海活动或提前回开罗备选", "type": "activity", "risk_level": "high", "must_book": true, "query_task_ids": ["a2-red-sea-half-day"] },
+        { "period": "evening", "title_zh": "住赫尔格达或晚回开罗", "type": "hotel", "risk_level": "high", "must_book": true, "query_task_ids": ["a2-hurghada-hotel"] }
+      ]
+    },
+    {
+      "option_id": "A2_ABU_SIMBEL_HRG",
+      "date": "2026-10-07",
+      "city_zh": "开罗",
+      "blocks": [
+        { "period": "morning", "title_zh": "一早赫尔格达 → 开罗", "type": "transfer", "risk_level": "high", "must_book": true, "query_task_ids": ["a2-hrg-cai-1007-early"] },
+        { "period": "afternoon", "title_zh": "14:45 开罗起飞返程", "type": "departure", "risk_level": "medium", "must_book": false },
+        { "period": "evening", "title_zh": "国际航班返程中", "type": "departure", "risk_level": "low", "must_book": false }
+      ]
+    }
+  ],
+  "query_tasks": [
+    { "id": "a1-cai-lxr-1002", "option_ids": ["A1_HRG_BALANCED"], "category": "transport", "title_zh": "10/2 开罗 → 卢克索交通", "why_it_matters_zh": "决定 A1 是否能按时进入卢克索", "success_criteria_zh": "上午或中午前到达卢克索", "priority": "high", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a1-lxr-hrg-1004", "option_ids": ["A1_HRG_BALANCED"], "category": "transport", "title_zh": "10/4 卢克索 → 赫尔格达包车", "why_it_matters_zh": "决定红海入住时间", "success_criteria_zh": "下午前到达赫尔格达酒店", "priority": "high", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a1-hrg-cai-1006", "option_ids": ["A1_HRG_BALANCED"], "category": "transport", "title_zh": "10/6 赫尔格达 → 开罗交通", "why_it_matters_zh": "为 10/7 国际航班留缓冲", "success_criteria_zh": "10/6 当天回到开罗", "priority": "high", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a1-cairo-hotel", "option_ids": ["A1_HRG_BALANCED"], "category": "hotel", "title_zh": "A1 开罗酒店", "why_it_matters_zh": "影响金字塔/GEM和返程机场动线", "success_criteria_zh": "交通便利、干净、适合 3 晚", "priority": "medium", "status": "assistant_pending", "owner": "assistant" },
+    { "id": "a1-luxor-hotel", "option_ids": ["A1_HRG_BALANCED"], "category": "hotel", "title_zh": "A1 卢克索酒店", "why_it_matters_zh": "影响东西岸游览效率", "success_criteria_zh": "干净、交通便利、适合 2 晚", "priority": "medium", "status": "assistant_pending", "owner": "assistant" },
+    { "id": "a1-hurghada-hotel", "option_ids": ["A1_HRG_BALANCED"], "category": "hotel", "title_zh": "A1 赫尔格达红海酒店", "why_it_matters_zh": "决定红海体验质量", "success_criteria_zh": "环境好，优先含早晚饭", "priority": "medium", "status": "assistant_pending", "owner": "assistant" },
+    { "id": "a1-red-sea-day-trip", "option_ids": ["A1_HRG_BALANCED"], "category": "activity", "title_zh": "A1 赫尔格达红海一日游", "why_it_matters_zh": "决定红海体验是否完整", "success_criteria_zh": "浮潜或海岛一日游，评价稳定", "priority": "medium", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a2-cai-asw-1001", "option_ids": ["A2_ABU_SIMBEL_HRG"], "category": "transport", "title_zh": "10/1 开罗 → 阿斯旺交通", "why_it_matters_zh": "决定 10/2 是否能早出发去阿布辛贝", "success_criteria_zh": "10/1 晚上或 10/2 很早到阿斯旺", "priority": "high", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a2-abu-simbel-1002", "option_ids": ["A2_ABU_SIMBEL_HRG"], "category": "activity", "title_zh": "10/2 阿布辛贝一日安排", "why_it_matters_zh": "阿斯旺方案的核心目的", "success_criteria_zh": "能完成阿布辛贝并回到阿斯旺", "priority": "high", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a2-asw-lxr-1003", "option_ids": ["A2_ABU_SIMBEL_HRG"], "category": "transport", "title_zh": "10/3 阿斯旺 → 卢克索交通", "why_it_matters_zh": "决定卢克索东岸是否还能安排", "success_criteria_zh": "10/3 中午或下午前到卢克索", "priority": "high", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a2-lxr-hrg-1005", "option_ids": ["A2_ABU_SIMBEL_HRG"], "category": "transport", "title_zh": "10/5 卢克索 → 赫尔格达包车", "why_it_matters_zh": "决定 A2 是否保留红海时间", "success_criteria_zh": "10/5 下午前到达赫尔格达", "priority": "high", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a2-hrg-cai-1007-early", "option_ids": ["A2_ABU_SIMBEL_HRG"], "category": "transport", "title_zh": "10/7 赫尔格达 → 开罗早班", "why_it_matters_zh": "决定 A2 是否可以当天衔接 14:45 国际航班", "success_criteria_zh": "到达开罗不晚于 11:00", "priority": "high", "status": "found_candidates", "owner": "assistant" },
+    { "id": "a2-hurghada-hotel", "option_ids": ["A2_ABU_SIMBEL_HRG"], "category": "hotel", "title_zh": "A2 赫尔格达红海酒店", "why_it_matters_zh": "红海时间被压缩，酒店体验更重要", "success_criteria_zh": "环境好，优先含早晚饭，适合短住", "priority": "medium", "status": "assistant_pending", "owner": "assistant" },
+    { "id": "a2-red-sea-half-day", "option_ids": ["A2_ABU_SIMBEL_HRG"], "category": "activity", "title_zh": "A2 赫尔格达半日或一日游", "why_it_matters_zh": "在压缩时间里保留红海体验", "success_criteria_zh": "半日可行，或一日游不影响 10/7 返程", "priority": "medium", "status": "found_candidates", "owner": "assistant" }
+  ],
+  "researched_candidates": [
+    {
+      "id": "research-20260731-cai-lxr-skyscanner",
+      "task_id": "a1-cai-lxr-1002",
+      "title_zh": "开罗 → 卢克索航班价格基准",
+      "source_platform": "Skyscanner",
+      "source_url": "https://www.skyscanner.com/routes/cai/lxr/cairo-to-luxor.html",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "transport",
+      "from_city_zh": "开罗",
+      "to_city_zh": "卢克索",
+      "date": "2026-10-02",
+      "duration_minutes": 60,
+      "price_cny": 360,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "checked_baggage_included": "unknown",
+      "notes_zh": "公开页显示 CAI-LXR from US$50，作为基准价；仍需下一轮确认 2026-10-02 当天班次、托运行李和出票价。"
+    },
+    {
+      "id": "research-20260731-cai-lxr-ms62-schedule",
+      "task_id": "a1-cai-lxr-1002",
+      "title_zh": "EgyptAir MS62 开罗 → 卢克索早班班期",
+      "source_platform": "Flightera / FlightInformation",
+      "source_url": "https://www.flightera.net/en/flight/EgyptAir-Cairo-Luxor/MS62",
+      "searched_at": "2026-07-31T13:20:00+08:00",
+      "type": "transport",
+      "from_city_zh": "开罗",
+      "to_city_zh": "卢克索",
+      "date": "2026-10-02",
+      "flight_numbers": ["MS62"],
+      "is_nonstop": true,
+      "departure_time_local": "07:15",
+      "arrival_time_local": "08:15",
+      "duration_minutes": 60,
+      "verification_level": "schedule_cross_checked",
+      "price_status": "live_price_blocked",
+      "checked_baggage_included": "unknown",
+      "notes_zh": "已查到 MS62 为开罗 T3 至卢克索的早班直飞班期，近期同为周五记录显示 07:15-08:15；10/2 指定日票价和托运行李仍需 OTA/航司出票页确认。"
+    },
+    {
+      "id": "research-20260731-lxr-hrg-daytrip",
+      "task_id": "a1-lxr-hrg-1004",
+      "title_zh": "卢克索 → 赫尔格达门到门包车",
+      "source_platform": "Daytrip",
+      "source_url": "https://daytrip.com/en/transfers/luxor-eg/hurghada-eg",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "transport",
+      "from_city_zh": "卢克索",
+      "to_city_zh": "赫尔格达",
+      "date": "2026-10-04",
+      "duration_minutes": 240,
+      "price_cny": 302,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "checked_baggage_included": "included",
+      "notes_zh": "公开页显示 4 小时、310km、from US$42 per person，含门到门和行李；适合作为 A1 包车基准。"
+    },
+    {
+      "id": "research-20260731-hrg-cai-skyscanner",
+      "task_id": "a1-hrg-cai-1006",
+      "title_zh": "赫尔格达 → 开罗航班价格基准",
+      "source_platform": "Skyscanner",
+      "source_url": "https://www.skyscanner.com/routes/hrg/cai/hurghada-to-cairo.html",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "transport",
+      "from_city_zh": "赫尔格达",
+      "to_city_zh": "开罗",
+      "date": "2026-10-06",
+      "duration_minutes": 70,
+      "price_cny": 245,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "checked_baggage_included": "unknown",
+      "notes_zh": "公开页显示 HRG-CAI from US$34，作为 10/6 回开罗基准；仍需确认当天直飞时间和含托运行李。"
+    },
+    {
+      "id": "research-20260731-hrg-cai-ms43-1006-schedule",
+      "task_id": "a1-hrg-cai-1006",
+      "title_zh": "EgyptAir MS43 赫尔格达 → 开罗早班",
+      "source_platform": "Flightradar24 / Airportia / Flightera",
+      "source_url": "https://www.flightradar24.com/data/flights/ms43/",
+      "searched_at": "2026-07-31T13:20:00+08:00",
+      "type": "transport",
+      "from_city_zh": "赫尔格达",
+      "to_city_zh": "开罗",
+      "date": "2026-10-06",
+      "flight_numbers": ["MS43", "SM8043"],
+      "is_nonstop": true,
+      "departure_time_local": "06:30",
+      "arrival_time_local": "07:40",
+      "duration_minutes": 70,
+      "verification_level": "schedule_cross_checked",
+      "price_status": "live_price_blocked",
+      "checked_baggage_included": "unknown",
+      "notes_zh": "已查到 MS43 计划 06:30 从 HRG 起飞、07:40 到 CAI，满足 A1 10/6 回开罗缓冲；10/6 指定日实时票价和托运行李仍需 OTA/航司出票页确认。"
+    },
+    {
+      "id": "research-20260731-hrg-orange-bay-getyourguide",
+      "task_id": "a1-red-sea-day-trip",
+      "title_zh": "赫尔格达 Orange Bay/浮潜一日游",
+      "source_platform": "GetYourGuide",
+      "source_url": "https://www.getyourguide.com/hurghada-l403/snorkeling-tc57/",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "activity",
+      "from_city_zh": "赫尔格达",
+      "to_city_zh": "赫尔格达",
+      "date": "2026-10-05",
+      "duration_minutes": 480,
+      "price_cny": 331,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "notes_zh": "公开页显示 3 Islands/Dolphins/Snorkel Yacht Trip 约 8 小时，折后 from US$46；多项可免费取消，适合作为 A1 红海完整日候选。"
+    },
+    {
+      "id": "research-20260731-cai-asw-trip",
+      "task_id": "a2-cai-asw-1001",
+      "title_zh": "开罗 → 阿斯旺航班价格基准",
+      "source_platform": "Trip.com",
+      "source_url": "https://www.trip.com/flights/cairo-to-aswan/airfares-cai-asw/",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "transport",
+      "from_city_zh": "开罗",
+      "to_city_zh": "阿斯旺",
+      "date": "2026-10-01",
+      "duration_minutes": 81,
+      "price_cny": 295,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "checked_baggage_included": "unknown",
+      "notes_zh": "公开页显示 CAI-ASW from US$41，平均飞行约 1小时21分；仍需确认 2026-10-01 晚班/早班和托运行李。"
+    },
+    {
+      "id": "research-20260731-cai-asw-ms80-schedule",
+      "task_id": "a2-cai-asw-1001",
+      "title_zh": "EgyptAir MS80 开罗 → 阿斯旺晚班班期",
+      "source_platform": "FlightStats / Flightera",
+      "source_url": "https://www.flightera.net/en/flight/EgyptAir-Cairo-Aswan/MS80",
+      "searched_at": "2026-07-31T13:20:00+08:00",
+      "type": "transport",
+      "from_city_zh": "开罗",
+      "to_city_zh": "阿斯旺",
+      "date": "2026-10-01",
+      "flight_numbers": ["MS80"],
+      "is_nonstop": true,
+      "departure_time_local": "23:20",
+      "arrival_time_local": "00:40",
+      "arrival_date_offset": 1,
+      "duration_minutes": 80,
+      "verification_level": "schedule_cross_checked",
+      "price_status": "live_price_blocked",
+      "checked_baggage_included": "unknown",
+      "notes_zh": "已查到 MS80 为 CAI→ASW 晚班直飞班期，适合 10/1 白天留给开罗、夜里到阿斯旺；指定日票价和托运行李仍需出票页确认。"
+    },
+    {
+      "id": "research-20260731-abu-simbel-getyourguide",
+      "task_id": "a2-abu-simbel-1002",
+      "title_zh": "阿斯旺出发阿布辛贝私家车/导游日游",
+      "source_platform": "GetYourGuide",
+      "source_url": "https://www.getyourguide.com/en-gb/aswan-l543/from-aswan-private-day-trip-to-abu-simbel-temple-with-guide-t447617/",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "activity",
+      "from_city_zh": "阿斯旺",
+      "to_city_zh": "阿布辛贝",
+      "date": "2026-10-02",
+      "duration_minutes": 600,
+      "price_cny": 0,
+      "verification_level": "baseline",
+      "price_status": "date_price_needed",
+      "notes_zh": "公开页确认私家空调车、酒店接送和私导结构；页面需点日期确认价格，下一轮用具体日期核价。"
+    },
+    {
+      "id": "research-20260731-asw-lxr-egypttrains",
+      "task_id": "a2-asw-lxr-1003",
+      "title_zh": "阿斯旺 → 卢克索火车/陆路基准",
+      "source_platform": "Egypt Trains / 12Go",
+      "source_url": "https://egypttrains.com/aswan/luxor?lang=en",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "transport",
+      "from_city_zh": "阿斯旺",
+      "to_city_zh": "卢克索",
+      "date": "2026-10-03",
+      "duration_minutes": 240,
+      "price_cny": 120,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "checked_baggage_included": "included",
+      "notes_zh": "Egypt Trains 显示 Aswan-Luxor 全天约 30 班；12Go 显示酒店接送 van 约 US$67。火车价需下一轮确认具体车次/外国人票价。"
+    },
+    {
+      "id": "research-20260731-lxr-hrg-tripspoint",
+      "task_id": "a2-lxr-hrg-1005",
+      "title_zh": "卢克索 → 赫尔格达包车备选",
+      "source_platform": "TripsPoint",
+      "source_url": "https://www.tripspoint.com/egypt/luxor/tour/transfers-round-trips/private-transfer-from-luxor-to-hurghada/8607",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "transport",
+      "from_city_zh": "卢克索",
+      "to_city_zh": "赫尔格达",
+      "date": "2026-10-05",
+      "duration_minutes": 180,
+      "price_cny": 659,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "checked_baggage_included": "included",
+      "notes_zh": "公开页显示约 3 小时、24/7 可约、€78.49 起；适合作为 A2 转场包车备选。"
+    },
+    {
+      "id": "research-20260731-hrg-cai-trip",
+      "task_id": "a2-hrg-cai-1007-early",
+      "title_zh": "10/7 赫尔格达 → 开罗早班待精确核价",
+      "source_platform": "Trip.com / Skyscanner",
+      "source_url": "https://www.trip.com/flights/hurghada-to-cairo/airfares-hrg-cai/",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "transport",
+      "from_city_zh": "赫尔格达",
+      "to_city_zh": "开罗",
+      "date": "2026-10-07",
+      "duration_minutes": 70,
+      "price_cny": 274,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "checked_baggage_included": "unknown",
+      "notes_zh": "公开页显示 HRG-CAI from US$38/US$34 量级；这是 A2 最关键项，下一轮必须确认 2026-10-07 是否有 11:00 前到达开罗的直飞且含托运行李。"
+    },
+    {
+      "id": "research-20260731-hrg-cai-ms43-1007-schedule",
+      "task_id": "a2-hrg-cai-1007-early",
+      "title_zh": "EgyptAir MS43 赫尔格达 → 开罗早班",
+      "source_platform": "Flightradar24 / Airportia / Flightera",
+      "source_url": "https://www.flightradar24.com/data/flights/ms43/",
+      "searched_at": "2026-07-31T13:20:00+08:00",
+      "type": "transport",
+      "from_city_zh": "赫尔格达",
+      "to_city_zh": "开罗",
+      "date": "2026-10-07",
+      "flight_numbers": ["MS43", "SM8043"],
+      "is_nonstop": true,
+      "departure_time_local": "06:30",
+      "arrival_time_local": "07:40",
+      "duration_minutes": 70,
+      "verification_level": "schedule_cross_checked",
+      "price_status": "live_price_blocked",
+      "checked_baggage_included": "unknown",
+      "notes_zh": "已查到 MS43 计划 06:30 从 HRG 起飞、07:40 到 CAI，时间上满足 10/7 不晚于 11:00 的硬条件；指定日实时票价和托运行李仍被出票页/反爬拦住。"
+    },
+    {
+      "id": "research-20260731-a2-red-sea-half-day",
+      "task_id": "a2-red-sea-half-day",
+      "title_zh": "赫尔格达半日快艇/浮潜备选",
+      "source_platform": "GetYourGuide",
+      "source_url": "https://www.getyourguide.com/hurghada-l403/snorkeling-tc57/",
+      "searched_at": "2026-07-31T09:45:00+08:00",
+      "type": "activity",
+      "from_city_zh": "赫尔格达",
+      "to_city_zh": "赫尔格达",
+      "date": "2026-10-06",
+      "duration_minutes": 240,
+      "price_cny": 259,
+      "verification_level": "baseline",
+      "price_status": "reference_only",
+      "notes_zh": "公开页显示 4 小时 speedboat/dolphins/snorkeling from US$36，适合作为 A2 压缩红海时间的半日候选。"
+    }
+  ]
+}

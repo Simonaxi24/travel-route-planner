@@ -1,76 +1,68 @@
-# 2026 国庆北京-兰州-埃及航班路径评估
+# 埃及段行程规划器
 
-这个项目用于比较 2026-09-25 到 2026-10-07 期间，北京出发并返回北京的两类埃及旅行方案。
+这个项目当前聚焦 2026 国庆埃及段行程规划，不再处理中国国内段。
 
-当前先交付报告和可复算评分模型：
+固定约束：
 
-- `reports/2026-09-egypt-route-report.md`：中文路线与行程评估报告
-- `data/route_candidates.json`：候选方案、估算价格、估算移动时间和关键假设
-- `scripts/score_routes.mjs`：价格/时间同权重评分脚本
-- 中国平台会作为后续核价重点：携程、去哪儿、飞猪、美团用于机票/酒店核价；小红书用于旅行规划经验交叉验证。
+- 2026-09-30 09:00 到达开罗
+- 2026-10-07 14:45 从开罗起飞
+- 全部金额口径使用人民币 CNY
+- 查询任务由助手处理；用户只处理登录、验证码、短信验证和最终购买确认
+- 不保存密码、cookie、token
 
-## 评分逻辑
+## 当前方案
 
-同等权重下，越便宜、越省时越好：
+- A1：开罗 + 卢克索 + 赫尔格达，默认推荐。优势是红海时间更完整，10/6 回开罗，10/7 国际返程缓冲更稳。
+- A2：开罗 + 阿斯旺/阿布辛贝 + 卢克索 + 赫尔格达。优势是补上阿布辛贝，代价是红海时间被压缩，并且必须优先确认 10/7 赫尔格达早班回开罗。
+
+如果 A2 找不到 10/7 早班赫尔格达到开罗、且无法在 11:00 前到达开罗，规划器会把 A2 标为高风险，并建议 10/6 先回开罗。
+
+## 本地页面
+
+生成页面数据：
+
+```bash
+node scripts/build_egypt_itinerary_data.mjs
+```
+
+启动本地页面：
+
+```bash
+cd /Users/xixinyu.simona/projects/路径规划/.worktrees/live-price-comparison
+python3 -m http.server 8000
+```
+
+访问：
 
 ```text
-price_score = min(candidate.price_usd) / candidate.price_usd * 100
-time_score = min(candidate.travel_hours) / candidate.travel_hours * 100
-total_score = 0.5 * price_score + 0.5 * time_score
+http://localhost:8000/app/
 ```
 
-运行：
+Planner v3 支持：
+
+- 对比 A1「开罗 + 卢克索 + 赫尔格达」和 A2「开罗 + 阿布辛贝 + 卢克索 + 赫尔格达」
+- 按天展示上午、下午、晚上怎么安排
+- 明确说明为什么阿布辛贝方案先去阿斯旺再去卢克索
+- 标出 A2 的 10/7 赫尔格达早班回开罗风险
+- 把所有待补票价、酒店、项目标记为「待我查询」
+- 每个查询任务提供实际订票/预订入口、助手候选录入表和「标记未找到」按钮
+- 点左侧行程查询时会自动填入当前候选；候选卡也可手动「填入表单」
+- 保存候选后即时刷新候选列表、显示保存反馈、更新方案分数和 10/7 回开罗风险
+- 导出更新后的 JSON
+
+## 验证
 
 ```bash
-node scripts/score_routes.mjs
+node tests/egypt_itinerary_validation.test.mjs
+node tests/egypt_itinerary_core.test.mjs
+node tests/egypt_itinerary_build.test.mjs
+node tests/egypt_itinerary_app.test.mjs
+node tests/dashboard_app.test.mjs
+node scripts/validate_egypt_itinerary.mjs data/egypt_itinerary_options.json
+node scripts/build_egypt_itinerary_data.mjs
+node scripts/verify_dashboard.mjs
 ```
 
-## 当前结论
+## 旧文件说明
 
-在“价格、时间同等权重”和“必须含托运行李”的约束下，当前推荐：
-
-1. 只按价格/时间：方案 3 + 开罗 + 沙姆沙伊赫，综合分最高。
-2. 按历史+红海体验完整度：方案 3 + 开罗 + 卢克索 + 赫尔格达更推荐。
-3. 如果郑州节点不可取消，选择方案 2 + 赫尔格达，但需要更早离开埃及，行程更压缩。
-
-所有金额都是 2026-07-29 调研时的网页报价/航线信息整理后的估算，最终出票前需要按同一公式更新。
-
-## 中国平台核价顺序
-
-1. 携程：优先查国际多程/缺口程、开罗/赫尔格达酒店和机酒套餐。
-2. 去哪儿：交叉查国内段、国际特价和缺口程。
-3. 飞猪：查国际机票、酒店、签证/当地玩乐套餐。
-4. 美团：查国内机票、高铁、国内酒店；国际段作为补充。
-5. 小红书：查埃及自由行、当地导游、防坑、赫尔格达/沙姆沙伊赫体验，不作为票价来源。
-
-## 新增方案 3
-
-方案 3 是：9/24 晚北京飞兰州，9/27 早兰州飞长春，9/27 晚或 9/28 回北京，9/29 北京往返埃及。
-
-埃及分支：
-
-- 开罗 + 卢克索 + 赫尔格达：历史体验完整，红海也顺路，但转场更多。
-- 开罗 + 沙姆沙伊赫：价格/时间更优，红海度假更强，但少了卢克索。
-
-## 实时比价工作流
-
-半自动实时比价围绕方案 3：
-
-- S3-HRG：开罗 + 卢克索 + 赫尔格达
-- S3-SSH：开罗 + 沙姆沙伊赫
-
-数据文件：
-
-- `data/live_price_options.json`
-
-验证和评分：
-
-```bash
-node scripts/validate_live_options.mjs data/live_price_options.json
-node scripts/score_live_options.mjs
-node scripts/generate_live_report.mjs
-```
-
-生成报告：
-
-- `reports/2026-09-egypt-live-price-comparison.md`
+仓库里还保留了早期 v1/v2 的路线评估、实时比价、国内段相关数据和脚本，作为历史资料。当前 active 页面只加载 `app/egypt-itinerary-data.js` 和 `app/app.js`，以埃及段 planner v3 为准。
